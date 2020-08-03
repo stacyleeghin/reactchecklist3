@@ -1,38 +1,106 @@
-.App {
-  text-align: center;
+@import 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css';
+h5 {
+  font-weight: 700;
+  font-size: 1.5em;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.wrap {
+  margin: auto;
+  width: 100vw;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.wrap .navbar {
+  width: 100vw;
+  height: 10em;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.wrap .navbar .navbar-dark {
+  background-color: #412c41 !important;
+}
+
+.wrap .navbar .navbar-brand {
+  /* background-image: url(./assets/bdep.png); */
+  background-size: cover;
+}
+
+.wrap .navbar form {
+  padding: 0 2em;
+}
+
+.wrap .navbar form input {
+  margin-left: 7em;
+  width: 40em;
+}
+
+.wrap .navbar form .btn-one {
+  background-color: #44b7d4;
   color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5em 2em;
 }
 
-.App-link {
-  color: #61dafb;
+.wrap .navbar form .btn-outline-success {
+  color: white;
+  border: thin white solid;
+  margin-left: 2em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.wrap .catalog {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0em 5em;
+  position: relative;
+  height: 38em;
+}
+
+.wrap .catalog .card-text {
+  color: grey;
+  line-height: 1em;
+}
+
+.wrap .catalog .btn {
+  background-color: #44b7d4;
+  border: none;
+  position: absolute;
+  bottom: 1em;
+  right: 50%;
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
+  padding: 0.5em 1em;
+}
+
+.wrap .bookinput {
+  margin-top: 7em;
+  padding-top: 3em;
+  padding-left: 5em;
+  background-color: #938d94;
+  height: 100vh;
+}
+
+.wrap .bookinput .list {
+  background-color: white;
+  border: thin grey solid;
+  border-radius: 10px;
+}
+
+.wrap .bookinput .list form {
+  padding: 3em;
+}
+
+.wrap .bookinput .list form button {
+  background-color: #44b7d4;
+  border: none;
+}
+
+.card{
+  width:13rem;
+}
+
+.list{
+  width:30rem;
 }
