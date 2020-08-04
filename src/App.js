@@ -12,23 +12,28 @@ class App extends Component {
       books:[
         { id:1,
           title:'L.A.Candy',
-          type:'Hard back'
+          type:'Hard back',
+          image:'https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/mid/9780/0617/9780061767593.jpg'
         },
         { id:2,
           title:'Strange Candy',
-          type:'Hard back'
+          type:'Hard back',
+          image:'https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/lrg/9780/7553/9780755355440.jpg'
         },
         { id:3,
           title:'Candy store',
-          type:'Hard back'
+          type:'Hard back',
+          image:'https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/lrg/9781/4721/9781472153104.jpg'
         },
         { id:4,
           title:'I Spy Candy',
-          type:'Hard back'
+          type:'Hard back',
+          image:'https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/mid/9780/4395/9780439524742.jpg'
         },
         { id:5,
           title:'Candy',
-          type:'Hard back'
+          type:'Hard back',
+          image:'https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/mid/9781/7411/9781741148688.jpg'
         },
       ]
     }
@@ -63,49 +68,19 @@ class App extends Component {
               <div className="main">
                   <div className="catalog">
 
-                      <Book/>
-                      <Book/>
-                    
-                      {/* <div className="card">
-                          <img src="https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/mid/9780/0617/9780061767593.jpg" className="card-img-top" alt="..."/>
-                          <div className="card-body">
-                              <h5 className="card-title">L.A.Candy</h5>
-                              <p className="card-text">01 May 2010 <br/>Hardback</p>
-                              <a href="#" className="btn btn-primary">REMOVE</a>
-                          </div>
-                      </div>
-                      <div className="card">
-                          <img src="https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/lrg/9780/7553/9780755355440.jpg" className="card-img-top" alt="..."/>
-                          <div className="card-body">
-                              <h5 className="card-title">Strange Candy</h5>
-                              <p className="card-text">01 May 2010 <br/>Hardback</p>
-                              <a href="#" className="btn btn-primary">REMOVE</a>
-                          </div>
-                      </div>
-                      <div className="card">
-                          <img src="https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/lrg/9781/4721/9781472153104.jpg" className="card-img-top" alt="..."/>
-                          <div className="card-body">
-                              <h5 className="card-title">Candy store</h5>
-                              <p className="card-text">01 May 2010 <br/>Hardback</p>
-                              <a href="#" className="btn btn-primary">REMOVE</a>
-                          </div>
-                      </div>
-                      <div className="card">
-                          <img src="https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/mid/9780/4395/9780439524742.jpg" className="card-img-top" alt="..."/>
-                          <div className="card-body">
-                              <h5 className="card-title">I Spy Candy </h5>
-                              <p className="card-text">01 May 2010 <br/>Hardback</p>
-                              <a href="#" className="btn btn-primary">REMOVE</a>
-                          </div>
-                      </div>
-                      <div className="card">
-                          <img src="https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/mid/9781/7411/9781741148688.jpg" className="card-img-top" alt="..."/>
-                          <div className="card-body">
-                              <h5 className="card-title">Candy</h5>
-                              <p className="card-text">01 May 2010 <br/>Hardback</p>
-                              <a href="#" className="btn btn-primary">REMOVE</a>
-                          </div>
-                      </div> */}
+                      {
+
+                        this.state.books.map((item)=>{
+
+                          var bookProps = {
+                            ...item
+                          }
+                          return (
+
+                            <Book {...bookProps} />
+                          )
+                        })
+                      }
                   </div>
                   <div className="bookinput">
                       <div className="list">
@@ -129,6 +104,17 @@ class App extends Component {
       </div>
         
     )
+  }
+  handleBookInputChange = (e) =>{
+    this.setState({bookInputValue: e. target.value})
+  }
+
+  // handleBookAdd = (e) => {
+  //   var book ={
+  //     id:Date.now(),
+  //     text:this.state.bookInputValue
+
+  //   }
   }
  
 }
