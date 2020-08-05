@@ -39,6 +39,40 @@ class App extends Component {
     }
   }
 
+  addBook = (data)=>{
+
+    var newBook = {
+      id: Date.now(),
+      ...data
+    }
+
+    var newList = [newBook,...this.state.books]
+    this.setState({
+      books:newList
+    })
+
+  }
+  removeBook = (id)=>{
+    var books =this.state.books
+
+    var filtered = books.filter((books)=>{
+      return books.id != id
+    })
+    this.setState({
+      books:filtered
+    })
+
+  }
+  updateBook = (id,data)=>{
+    var books = this.state.books
+    var update = books.map((book)=>{
+      return (book.id == id) ? {...book, ...data} : book
+    })
+    this.setState({
+      books:update
+    })
+  }
+
   render (){
     return (
 
@@ -73,7 +107,9 @@ class App extends Component {
                         this.state.books.map((item)=>{
 
                           var bookProps = {
-                            ...item
+                            ...item,
+                            removeBook:this.removeBook,
+                            updateBook: this.updateBook
                           }
                           return (
 
@@ -109,14 +145,8 @@ class App extends Component {
     this.setState({bookInputValue: e. target.value})
   }
 
-  // handleBookAdd = (e) => {
-  //   var book ={
-  //     id:Date.now(),
-  //     text:this.state.bookInputValue
-
-  //   }
   }
  
-}
+
 
 export default App;
